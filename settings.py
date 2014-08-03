@@ -16,41 +16,42 @@
 #    ('John Doe', 'jdoe@gmail.com'),
 # )
 ADMINS = (
+ ('Chandra', 'chandra.sengupta@mycuratio.com'),
     )
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = 'REPLACEMENOW'
+SECRET_KEY = 'curatehealth'
 
 # absolute filepath where indivo_server is installed
-APP_HOME = '/web/indivo_server'
+APP_HOME = "/indivo/indivo_server"
 
 # Automatically create new records with sample data by default
-DEMO_MODE = False
+DEMO_MODE = True
 
 # which sample data to load when in demo mode. Maps desired record labels
 # to data profiles. 'Data profiles' correspond
 # to subfolders of SAMPLE_DATA_DIR
 DEMO_PROFILES = {
-    'William Robinson':'patient_967332',
+    'Mycuratio Curate Health':'patient_967332',
     }
 
 # Location for sample data
 SAMPLE_DATA_DIR = APP_HOME + '/sample_data'
 
 # URL prefix (where indivo_server will be accessible from the web)
-SITE_URL_PREFIX = "http://localhost:8000"
+SITE_URL_PREFIX = "http://curatehealth.net:8000"
 
 # URL prefix for the UI server
 # (usually port 80 on the same machine)
-UI_SERVER_URL = 'http://localhost'
+UI_SERVER_URL = 'http://curatehealth.net:80'
 
 # Storage Settings
 DATABASES = {
     'default':{
         'ENGINE':'django.db.backends.postgresql_psycopg2', # '.postgresql_psycopg2', '.mysql', or '.oracle'
         'NAME':'indivo', # Required to be non-empty string
-        'USER':'', # Required to be non-empty string
-        'PASSWORD':'',
+        'USER':'indivo', # Required to be non-empty string
+        'PASSWORD':'indivo',
         'HOST':'', # Set to empty string for localhost.
         'PORT':'', # Set to empty string for default.
         },
@@ -63,12 +64,15 @@ DATABASES = {
 MEDIA_ROOT = APP_HOME + '/indivo_files/'
 
 # Email settings
-SEND_MAIL = False # Turn email on at all?
-EMAIL_HOST = ""
-EMAIL_PORT = 25
-EMAIL_FROM_ADDRESS = "Indivo <support@indivo.localhost>"
-EMAIL_SUPPORT_ADDRESS = "support@indivo.localhost"
-EMAIL_SUPPORT_NAME = "Indivo Support"
+SEND_MAIL = True # Turn email on at all?
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_PORT = 465
+EMAIL_FROM_ADDRESS = "Mycuratio Support <contact@mycuratio.com>"
+EMAIL_SUPPORT_ADDRESS = "contact@mycuratio.com"
+EMAIL_SUPPORT_NAME = "myCuratio Support"
+EMAIL_HOST_USER = "contact@mycuratio.com"
+EMAIL_HOST_PASSWORD = "M3adow08"
+
 
 # Timeout before reenabling a disabled account
 # in seconds. None if you don't want reenabling.
@@ -80,7 +84,7 @@ ACCOUNT_REENABLE_TIMEOUT = None
 ##################
 
 # Default carenets for new records
-INDIVO_DEFAULT_CARENETS = ['Family', 'Physicians', 'Work/School']
+INDIVO_DEFAULT_CARENETS = ['Family', 'Physicians', 'Work/School','Care Communities','Treat']
 
 # Audit Settings
 AUDIT_LEVEL = 'HIGH' # 'HIGH', 'MED', 'LOW', 'NONE'
