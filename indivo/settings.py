@@ -25,7 +25,7 @@ ADMINS = (
 SECRET_KEY = 'curatehealth'
 
 # absolute filepath where indivo_server is installed
-APP_HOME = /indivo/indivo_server
+APP_HOME = "/indivo/indivo_server"
 
 # Automatically create new records with sample data by default
 DEMO_MODE = True
@@ -48,7 +48,7 @@ SITE_DESCRIPTION = "Indivo Server"
 
 # URL prefix for the UI server
 # (usually port 80 on the same machine)
-UI_SERVER_URL = 'http://localhost'
+UI_SERVER_URL = 'http://curatehealth.net:80'
 
 # Storage Settings
 DATABASES = {
@@ -69,7 +69,7 @@ DATABASES = {
 MEDIA_ROOT = APP_HOME + '/indivo_files/'
 
 # Email settings
-SEND_MAIL = TRUE # Turn email on at all?
+SEND_MAIL = True # Turn email on at all?
 EMAIL_HOST = "smtp.gmail.com"
 EMAIL_PORT = 465
 EMAIL_FROM_ADDRESS = "Mycuratio Support <contact@mycuratio.com>"
